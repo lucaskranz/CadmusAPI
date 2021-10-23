@@ -1,0 +1,71 @@
+CREATE TABLE [dbo].[Cliente] (
+   [Id] bigint IDENTITY(1,1) NOT NULL,
+   [Nome] varchar(50) NOT NULL,
+   [Email] varchar(50) NOT NULL,
+   [Aldeia] varchar(50) NOT NULL
+   CONSTRAINT [PK_Cliente_Id] PRIMARY KEY CLUSTERED
+   (
+     [Id] ASC
+   )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, DATA_COMPRESSION=NONE) ON [PRIMARY]
+ ) ON [PRIMARY]
+ GO
+ 
+ ----------------------------------
+ 
+ CREATE TABLE [dbo].[Produto] (
+   [Id] bigint IDENTITY(1,1) NOT NULL,
+   [Descricao] varchar(50) NOT NULL,
+   [Foto] varchar(300) NULL,
+   [Valor] decimal NOT NULL
+   CONSTRAINT [PK_Produto_Id] PRIMARY KEY CLUSTERED
+   (
+     [Id] ASC
+   )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, DATA_COMPRESSION=NONE) ON [PRIMARY]
+ ) ON [PRIMARY]
+ GO
+ 
+ ----------------------------------
+ 
+ CREATE TABLE [dbo].[Pedido] (
+   [Id] bigint IDENTITY(1,1) NOT NULL,
+   [IdCliente] bigint NOT NULL,
+   [Valor] decimal NOT NULL,   
+   [Desconto] decimal NULL,
+   [ValorTotal] decimal NOT NULL
+   CONSTRAINT [PK_Pedido_Id] PRIMARY KEY CLUSTERED
+   (
+     [Id] ASC
+   )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, DATA_COMPRESSION=NONE) ON [PRIMARY]
+ ) ON [PRIMARY]
+ GO
+
+ ALTER TABLE [dbo].[Pedido] WITH CHECK ADD CONSTRAINT [FK_Pedido_IdCliente_Cliente_Id] FOREIGN KEY([IdCliente])
+ REFERENCES [dbo].[Cliente] ([Id])
+ GO
+ 
+ ---------------------------------------
+ 
+ CREATE TABLE [dbo].[PedidoProduto] (
+   [Id] bigint IDENTITY(1,1) NOT NULL,
+   [IdPedido] bigint NOT NULL,
+   [IdProduto] bigint NOT NULL
+   CONSTRAINT [PK_PedidoProduto_Id] PRIMARY KEY CLUSTERED
+   (
+     [Id] ASC
+   )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, DATA_COMPRESSION=NONE) ON [PRIMARY]
+ ) ON [PRIMARY]
+ GO
+
+ ALTER TABLE [dbo].[PedidoProduto] WITH CHECK ADD CONSTRAINT [FK_PedidoProduto_IdPedido_Pedido_Id] FOREIGN KEY([IdPedido])
+ REFERENCES [dbo].[Pedido] ([Id])
+ GO
+
+ALTER TABLE [dbo].[PedidoProduto] CHECK CONSTRAINT [FK_PedidoProduto_IdPedido_Pedido_Id]
+ GO
+
+ ALTER TABLE [dbo].[PedidoProduto] WITH CHECK ADD CONSTRAINT [FK_PedidoProduto_IdProduto_Produto_Id] FOREIGN KEY([IdProduto])
+ REFERENCES [dbo].[Produto] ([Id])
+ GO
+
+ALTER TABLE [dbo].[PedidoProduto] CHECK CONSTRAINT [FK_PedidoProduto_IdProduto_Produto_Id]
+ GO
