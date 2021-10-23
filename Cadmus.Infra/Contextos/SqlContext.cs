@@ -49,9 +49,9 @@ namespace Cadmus.Infra.Contextos
             modelBuilder.Entity<Pedido>().Property(d => d.Id).HasColumnType("bigint");
 
             modelBuilder.Entity<Pedido>().Property(d => d.IdCliente).HasColumnType("bigint");
-            modelBuilder.Entity<Pedido>().Property(d => d.Valor).HasColumnType("float");
-            modelBuilder.Entity<Pedido>().Property(d => d.Desconto).HasColumnType("float");
-            modelBuilder.Entity<Pedido>().Property(d => d.ValorTotal).HasColumnType("float");
+            modelBuilder.Entity<Pedido>().Property(d => d.Valor).HasColumnType("decimal");
+            modelBuilder.Entity<Pedido>().Property(d => d.Desconto).HasColumnType("decimal");
+            modelBuilder.Entity<Pedido>().Property(d => d.ValorTotal).HasColumnType("decimal");
 
             modelBuilder.Entity<Pedido>().HasOne(d => d.Cliente).WithMany().HasForeignKey(f => f.IdCliente);
         }

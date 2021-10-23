@@ -14,6 +14,7 @@ namespace Cadmus.Infra.Extensions
             services.AddScoped<IClienteRepositorio, ClienteRepositorio>();
             services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
             services.AddScoped<IPedidoRepositorio, PedidoRepositorio>();
+            services.AddScoped<IPedidoProdutoRepositorio, PedidoProdutoRepositorio>();
 
             return services;
         } 

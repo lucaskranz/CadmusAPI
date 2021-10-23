@@ -3,6 +3,7 @@ using Cadmus.Dominio.DTO;
 using Cadmus.Dominio.Entidades;
 using Cadmus.Dominio.Interfaces.Repositorios;
 using Cadmus.Dominio.Interfaces.Servicos;
+using Cadmus.Dominio.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,15 @@ namespace Cadmus.Servicos.Servicos
     {
         private readonly IPedidoRepositorio _pedidoRepositorio;
         private readonly IProdutoRepositorio _produtoRepositorio;
+        private readonly IPedidoProdutoRepositorio _pedidoProdutoRepositorio;
 
-        public PedidoServico(IPedidoRepositorio pedidoRepositorio, IProdutoRepositorio produtoRepositorio)
+        public PedidoServico(IPedidoRepositorio pedidoRepositorio, 
+                            IProdutoRepositorio produtoRepositorio, 
+                            IPedidoProdutoRepositorio pedidoProdutoRepositorio)
         {
             _pedidoRepositorio = pedidoRepositorio;
             _produtoRepositorio = produtoRepositorio;
+            _pedidoProdutoRepositorio = pedidoProdutoRepositorio;
         }
 
         public ResponseApi Cadastrar(PedidoDTO model)
@@ -42,6 +47,18 @@ namespace Cadmus.Servicos.Servicos
 
                 _pedidoRepositorio.Add(pedido);
                 _pedidoRepositorio.Commit();
+
+                foreach (var item in model.Produtos)
+                {
+                    PedidoProduto pedidoProduto = new()
+                    {
+                        IdPedido = pedido.Id,
+                        IdProduto = item.IdProduto
+                    };
+
+                    _pedidoProdutoRepositorio.Add(pedidoProduto);
+                    _pedidoProdutoRepositorio.Commit();
+                }                
 
                 return new ResponseApi(true, $"Pedido cadastrado com sucesso. O total do seu pedido é de R$ {pedido.ValorTotal}");
             }
@@ -71,11 +88,25 @@ namespace Cadmus.Servicos.Servicos
             }
         }
 
-        public Pedido ObterPedidoPorId(long id)
+        public ListarProdutosPedidoViewModel ObterPedidoPorId(long id)
         {
             try
             {
-                return _pedidoRepositorio.GetById(id);
+                Pedido pedido = _pedidoRepositorio.GetById(id);
+                var produtos = _pedidoProdutoRepositorio.ListarProdutosPorPedido(id).Select(a => a.Produto).ToList();
+
+                ListarProdutosPedidoViewModel model = new()
+                {
+                    IdPedido = pedido.Id,
+                    IdCliente = pedido.IdCliente,
+                    Data = pedido.Data,
+                    Desconto = pedido.Desconto,
+                    Valor = pedido.Valor,
+                    ValorTotal = pedido.ValorTotal,
+                    Produtos = produtos
+                };
+
+                return model;
             }
             catch (Exception e)
             {
@@ -83,15 +114,36 @@ namespace Cadmus.Servicos.Servicos
             }
         }
 
-        public List<Pedido> ObterListaPedidos()
+        public List<ListarProdutosPedidoViewModel> ObterListaPedidos()
         {
             try
             {
-                return _pedidoRepositorio.ObterListaPedidos().ToList();
+                List<ListarProdutosPedidoViewModel> listarProdutos = new();
+
+                List<Pedido> pedidos = _pedidoRepositorio.ObterListaPedidos().ToList();
+
+                foreach(var item in pedidos)
+                {
+                    var produtos = _pedidoProdutoRepositorio.ListarProdutosPorPedido(item.Id).Select(a => a.Produto).ToList();
+                    ListarProdutosPedidoViewModel model = new()
+                    {
+                        IdPedido = item.Id,
+                        IdCliente = item.IdCliente,
+                        Data = item.Data,
+                        Valor = item.Valor,
+                        Desconto = item.Desconto,
+                        ValorTotal = item.ValorTotal,
+                        Produtos = produtos
+                    };
+
+                    listarProdutos.Add(model);
+                }
+
+                return listarProdutos;
             }
             catch (Exception e)
             {
-                throw new ArgumentException($"Erro ao buscar por Id {e.Message}");
+                throw new ArgumentException($"Erro ao buscar lista de pedidos - {e.Message}");
             }
         }
     }

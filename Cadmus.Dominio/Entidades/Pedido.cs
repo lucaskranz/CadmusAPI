@@ -1,6 +1,7 @@
 ﻿using Cadmus.Dominio.Entidades.Base;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Cadmus.Dominio.Entidades
 {

@@ -2,6 +2,7 @@
 using Cadmus.Dominio.DTO;
 using Cadmus.Dominio.Entidades;
 using Cadmus.Dominio.Interfaces.Servicos;
+using Cadmus.Dominio.ViewModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -25,8 +26,24 @@ namespace Cadmus.API.Controllers
         {
             try
             {
-                List<Pedido> pedidos = _pedidoServico.ObterListaPedidos();
+                List<ListarProdutosPedidoViewModel> pedidos = _pedidoServico.ObterListaPedidos();
+
                 return Ok(pedidos);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = e.Message, sucesso = false });
+            }
+        }
+
+        [HttpGet, Route("pedidoPorId/{id}")]
+        public IActionResult ObterPedidoPorId(long id)
+        {
+            try
+            {
+                ListarProdutosPedidoViewModel pedido = _pedidoServico.ObterPedidoPorId(id);
+
+                return Ok(pedido);
             }
             catch (Exception e)
             {
@@ -61,5 +78,6 @@ namespace Cadmus.API.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new { message = e.Message, sucesso = false });
             }
         }
+
     }
 }

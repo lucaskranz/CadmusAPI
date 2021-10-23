@@ -27,8 +27,7 @@ namespace Cadmus.Servicos.Servicos
                 if (_clienteRepositorio.ExisteEmailCadastrado(model.Email))
                     return new ResponseApi(false, "E-mail já cadastrado.");
 
-                Cliente cliente = new() { Nome = model.Nome };
-
+                Cliente cliente = new() { Nome = model.Nome, Email = model.Email, Aldeia = model.Aldeia };                
                 _clienteRepositorio.Add(cliente);
                 _clienteRepositorio.Commit();
 

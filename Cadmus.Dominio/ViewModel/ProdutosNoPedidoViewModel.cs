@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cadmus.Dominio.ViewModel
 {
-    public class PedidoProdutoViewModel
+    public class ProdutosNoPedidoViewModel
     {
         public long IdProduto { get; set; }
     }

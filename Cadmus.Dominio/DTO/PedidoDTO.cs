@@ -7,10 +7,9 @@ namespace Cadmus.Dominio.DTO
 {
     public class PedidoDTO
     {
-        public long Numero { get; set; }
         public DateTime Data { get; set; }
         public decimal? Desconto { get; set; }
         public long IdCliente { get; set; }
-        public ICollection<PedidoProdutoViewModel> Produtos { get; set; }
+        public ICollection<ProdutosNoPedidoViewModel> Produtos { get; set; }
     }
 }

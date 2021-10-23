@@ -28,6 +28,7 @@ CREATE TABLE [dbo].[Cliente] (
  
  CREATE TABLE [dbo].[Pedido] (
    [Id] bigint IDENTITY(1,1) NOT NULL,
+   [Data] datetime NOT NULL,
    [IdCliente] bigint NOT NULL,
    [Valor] decimal NOT NULL,   
    [Desconto] decimal NULL,
