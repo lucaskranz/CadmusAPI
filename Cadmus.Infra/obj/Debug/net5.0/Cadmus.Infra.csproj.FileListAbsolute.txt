@@ -1,0 +1,5 @@
+C:\Projetos\CadmusAPI\Cadmus.Infra\bin\Debug\net5.0\Cadmus.Dominio.dll
+C:\Projetos\CadmusAPI\Cadmus.Infra\obj\Debug\net5.0\Cadmus.Infra.csprojAssemblyReference.cache
+C:\Projetos\CadmusAPI\Cadmus.Infra\obj\Debug\net5.0\Cadmus.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\CadmusAPI\Cadmus.Infra\obj\Debug\net5.0\Cadmus.Infra.AssemblyInfoInputs.cache
+C:\Projetos\CadmusAPI\Cadmus.Infra\obj\Debug\net5.0\Cadmus.Infra.AssemblyInfo.cs

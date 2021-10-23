@@ -5,4 +5,8 @@
     <ProjectGuid>{1963262C-75FE-4991-866A-094F690BB779}</ProjectGuid>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Cadmus.Dominio\Cadmus.Dominio.csproj" />
+  </ItemGroup>
+
 </Project>

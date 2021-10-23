@@ -5,4 +5,12 @@
     <ProjectGuid>{29E4B2BB-E398-4C19-84F2-FE3CEED543B6}</ProjectGuid>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Enums\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.11" />
+  </ItemGroup>
+
 </Project>
