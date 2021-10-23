@@ -1,0 +1,15 @@
+C:\Projetos\CadmusAPI\Cadmus.Servicos\bin\Debug\net5.0\Cadmus.Servicos.deps.json
+C:\Projetos\CadmusAPI\Cadmus.Servicos\bin\Debug\net5.0\Cadmus.Servicos.dll
+C:\Projetos\CadmusAPI\Cadmus.Servicos\bin\Debug\net5.0\ref\Cadmus.Servicos.dll
+C:\Projetos\CadmusAPI\Cadmus.Servicos\bin\Debug\net5.0\Cadmus.Servicos.pdb
+C:\Projetos\CadmusAPI\Cadmus.Servicos\bin\Debug\net5.0\Cadmus.Dominio.dll
+C:\Projetos\CadmusAPI\Cadmus.Servicos\bin\Debug\net5.0\Cadmus.Dominio.pdb
+C:\Projetos\CadmusAPI\Cadmus.Servicos\obj\Debug\net5.0\Cadmus.Servicos.csprojAssemblyReference.cache
+C:\Projetos\CadmusAPI\Cadmus.Servicos\obj\Debug\net5.0\Cadmus.Servicos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\CadmusAPI\Cadmus.Servicos\obj\Debug\net5.0\Cadmus.Servicos.AssemblyInfoInputs.cache
+C:\Projetos\CadmusAPI\Cadmus.Servicos\obj\Debug\net5.0\Cadmus.Servicos.AssemblyInfo.cs
+C:\Projetos\CadmusAPI\Cadmus.Servicos\obj\Debug\net5.0\Cadmus.Servicos.csproj.CoreCompileInputs.cache
+C:\Projetos\CadmusAPI\Cadmus.Servicos\obj\Debug\net5.0\Cadmus.Servicos.csproj.CopyComplete
+C:\Projetos\CadmusAPI\Cadmus.Servicos\obj\Debug\net5.0\Cadmus.Servicos.dll
+C:\Projetos\CadmusAPI\Cadmus.Servicos\obj\Debug\net5.0\ref\Cadmus.Servicos.dll
+C:\Projetos\CadmusAPI\Cadmus.Servicos\obj\Debug\net5.0\Cadmus.Servicos.pdb

@@ -13,7 +13,6 @@ namespace Cadmus.Infra.Mapeamentos
             builder.Property(d => d.Id).HasColumnType("bigint");
 
             builder.Property(d => d.IdCliente).HasColumnType("bigint");
-            builder.Property(d => d.Numero).HasColumnType("bigint");
             builder.Property(d => d.Valor).HasColumnType("float");
             builder.Property(d => d.Desconto).HasColumnType("float");
             builder.Property(d => d.ValorTotal).HasColumnType("float");

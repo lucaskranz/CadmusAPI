@@ -1,6 +1,6 @@
-﻿namespace Cadmus.Dominio.ViewModel
+﻿namespace Cadmus.Dominio.DTO
 {
-    public class ProdutoViewModel
+    public class ProdutoDTO
     {
         public string Descricao { get; set; }
         public decimal Valor { get; set; }

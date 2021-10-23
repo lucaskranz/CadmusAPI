@@ -3,3 +3,16 @@ C:\Projetos\CadmusAPI\Cadmus.Infra\obj\Debug\net5.0\Cadmus.Infra.csprojAssemblyR
 C:\Projetos\CadmusAPI\Cadmus.Infra\obj\Debug\net5.0\Cadmus.Infra.GeneratedMSBuildEditorConfig.editorconfig
 C:\Projetos\CadmusAPI\Cadmus.Infra\obj\Debug\net5.0\Cadmus.Infra.AssemblyInfoInputs.cache
 C:\Projetos\CadmusAPI\Cadmus.Infra\obj\Debug\net5.0\Cadmus.Infra.AssemblyInfo.cs
+C:\Projetos\CadmusAPI\Cadmus.Infra\obj\Debug\net5.0\Cadmus.Infra.csproj.CoreCompileInputs.cache
+C:\Projetos\CadmusAPI\Cadmus.Infra\bin\Debug\net5.0\Cadmus.Infra.deps.json
+C:\Projetos\CadmusAPI\Cadmus.Infra\bin\Debug\net5.0\Cadmus.Infra.runtimeconfig.json
+C:\Projetos\CadmusAPI\Cadmus.Infra\bin\Debug\net5.0\Cadmus.Infra.runtimeconfig.dev.json
+C:\Projetos\CadmusAPI\Cadmus.Infra\bin\Debug\net5.0\Cadmus.Infra.dll
+C:\Projetos\CadmusAPI\Cadmus.Infra\bin\Debug\net5.0\ref\Cadmus.Infra.dll
+C:\Projetos\CadmusAPI\Cadmus.Infra\bin\Debug\net5.0\Cadmus.Infra.pdb
+C:\Projetos\CadmusAPI\Cadmus.Infra\bin\Debug\net5.0\Cadmus.Dominio.pdb
+C:\Projetos\CadmusAPI\Cadmus.Infra\obj\Debug\net5.0\Cadmus.Infra.csproj.CopyComplete
+C:\Projetos\CadmusAPI\Cadmus.Infra\obj\Debug\net5.0\Cadmus.Infra.dll
+C:\Projetos\CadmusAPI\Cadmus.Infra\obj\Debug\net5.0\ref\Cadmus.Infra.dll
+C:\Projetos\CadmusAPI\Cadmus.Infra\obj\Debug\net5.0\Cadmus.Infra.pdb
+C:\Projetos\CadmusAPI\Cadmus.Infra\obj\Debug\net5.0\Cadmus.Infra.genruntimeconfig.cache

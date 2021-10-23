@@ -1,16 +1,16 @@
 ﻿using Cadmus.Dominio.Entidades;
+using Cadmus.Dominio.ViewModel;
 using System;
 using System.Collections.Generic;
 
-namespace Cadmus.Dominio.Interfaces.Servicos
+namespace Cadmus.Dominio.DTO
 {
-    public class PedidoViewModel
+    public class PedidoDTO
     {
         public long Numero { get; set; }
         public DateTime Data { get; set; }
-        public decimal Valor { get; set; }
         public decimal? Desconto { get; set; }
         public long IdCliente { get; set; }
-        public ICollection<Produto> Produtos { get; set; }
+        public ICollection<PedidoProdutoViewModel> Produtos { get; set; }
     }
 }

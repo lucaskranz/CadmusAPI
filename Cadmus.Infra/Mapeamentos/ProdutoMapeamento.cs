@@ -14,7 +14,7 @@ namespace Cadmus.Infra.Mapeamentos
 
             builder.Property(d => d.Descricao).HasColumnType("varchar").HasMaxLength(50);
             builder.Property(d => d.Foto).HasColumnType("varchar").HasMaxLength(300);
-            builder.Property(d => d.Valor).HasColumnType("float");
+            builder.Property(d => d.Valor).HasColumnType("decimal");
         }
     }
 }

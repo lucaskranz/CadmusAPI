@@ -1,15 +1,15 @@
 ﻿using Cadmus.Dominio.Entidades;
-using Cadmus.Dominio.ViewModel;
+using Cadmus.Dominio.DTO;
 using System.Collections.Generic;
 
 namespace Cadmus.Dominio.Interfaces.Servicos
 {
     public interface IProdutoServico
     {
-        List<Produto> ObterListaProdutos();
+        List<Produto> ObterListaProduto();
         Produto ObterProdutoPorId(long id);
-        ResponseApi Cadastrar(ProdutoViewModel produto);
-        ResponseApi Editar(ProdutoViewModel produto);
+        ResponseApi Cadastrar(ProdutoDTO model);
+        ResponseApi Editar(long id, ProdutoDTO model);
         ResponseApi Excluir(long id);
     }
 }

@@ -1,18 +1,15 @@
-﻿using Cadmus.Dominio.Entidades;
-using Cadmus.Dominio.ViewModel;
-using System;
+﻿using Cadmus.Dominio.DTO;
+using Cadmus.Dominio.Entidades;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cadmus.Dominio.Interfaces.Servicos
 {
     public interface IClienteServico
     {
+        List<Cliente> ObterListaClientes();
         Cliente ObterClientePorId(long id);
-        ResponseApi Cadastrar(Cliente cliente);
-        ResponseApi Editar(long id, ClienteViewModel model);
+        ResponseApi Cadastrar(ClienteDTO cliente);
+        ResponseApi Editar(long id, ClienteDTO model);
         ResponseApi Excluir(long id);
     }
 }

@@ -6,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
+using Cadmus.Infra.Extensions;
+using Cadmus.Servicos.Extensions;
 
 namespace CadmusAPI
 {
@@ -22,8 +24,10 @@ namespace CadmusAPI
         public void ConfigureServices(IServiceCollection services)
         {
             var connection = Configuration.GetConnectionString("DefaultConnection");
-
             services.AddDbContext<SqlContext>(option => option.UseSqlServer(connection));
+
+            services.AddDependenciesInjectorsInfra();
+            services.AddDependenciesInjectorsServicos();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

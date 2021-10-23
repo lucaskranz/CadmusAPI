@@ -14,10 +14,51 @@ namespace Cadmus.Infra.Contextos
     {
         public SqlContext(DbContextOptions<SqlContext> options) : base(options) { }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            /*Cliente*/
+            modelBuilder.Entity<Cliente>().Property(d => d.Id).HasColumnType("bigint");
+            modelBuilder.Entity<Cliente>().Property(d => d.Nome).HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Cliente>().Property(d => d.Email).HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Cliente>().Property(d => d.Aldeia).HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Cliente>().ToTable("Cliente").HasKey(d => d.Id);
+
+            /*PedidoProduto*/
+            modelBuilder.Entity<PedidoProduto>().ToTable("PedidoProduto");
+            modelBuilder.Entity<PedidoProduto>().HasKey(d => d.Id);
+
+            modelBuilder.Entity<PedidoProduto>().Property(d => d.Id).HasColumnType("bigint");
+            modelBuilder.Entity<PedidoProduto>().Property(d => d.IdPedido).HasColumnType("bigint");
+            modelBuilder.Entity<PedidoProduto>().Property(d => d.IdProduto).HasColumnType("bigint");
+
+            modelBuilder.Entity<PedidoProduto>().HasOne(d => d.Pedido).WithMany().HasForeignKey(f => f.IdPedido);
+            modelBuilder.Entity<PedidoProduto>().HasOne(d => d.Produto).WithMany().HasForeignKey(f => f.IdProduto);
+
+            /*Produto*/
+            modelBuilder.Entity<Produto>().ToTable("Produto");
+            modelBuilder.Entity<Produto>().HasKey(d => d.Id);
+            modelBuilder.Entity<Produto>().Property(d => d.Id).HasColumnType("bigint");
+
+            modelBuilder.Entity<Produto>().Property(d => d.Descricao).HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Produto>().Property(d => d.Foto).HasColumnType("varchar").HasMaxLength(300);
+            modelBuilder.Entity<Produto>().Property(d => d.Valor).HasColumnType("decimal");
+
+            /*Pedido*/
+            modelBuilder.Entity<Pedido>().ToTable("Pedido");
+            modelBuilder.Entity<Pedido>().HasKey(d => d.Id);
+            modelBuilder.Entity<Pedido>().Property(d => d.Id).HasColumnType("bigint");
+
+            modelBuilder.Entity<Pedido>().Property(d => d.IdCliente).HasColumnType("bigint");
+            modelBuilder.Entity<Pedido>().Property(d => d.Valor).HasColumnType("float");
+            modelBuilder.Entity<Pedido>().Property(d => d.Desconto).HasColumnType("float");
+            modelBuilder.Entity<Pedido>().Property(d => d.ValorTotal).HasColumnType("float");
+
+            modelBuilder.Entity<Pedido>().HasOne(d => d.Cliente).WithMany().HasForeignKey(f => f.IdCliente);
+        }
+
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
-        public DbSet<PedidoProduto> PedidosProduto { get; set; }
 
         public bool Commit()
         {

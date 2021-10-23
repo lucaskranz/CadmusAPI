@@ -2,7 +2,7 @@
 using Cadmus.Dominio.Entidades;
 using Cadmus.Dominio.Interfaces.Repositorios;
 using Cadmus.Dominio.Interfaces.Servicos;
-using Cadmus.Dominio.ViewModel;
+using Cadmus.Dominio.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,12 +20,14 @@ namespace Cadmus.Servicos.Servicos
             _clienteRepositorio = clienteRepositorio;
         }
 
-        public ResponseApi Cadastrar(Cliente cliente)
+        public ResponseApi Cadastrar(ClienteDTO model)
         {
             try
             {
-                if (_clienteRepositorio.ExisteEmailCadastrado(cliente.Email))
+                if (_clienteRepositorio.ExisteEmailCadastrado(model.Email))
                     return new ResponseApi(false, "E-mail já cadastrado.");
+
+                Cliente cliente = new() { Nome = model.Nome };
 
                 _clienteRepositorio.Add(cliente);
                 _clienteRepositorio.Commit();
@@ -38,7 +40,7 @@ namespace Cadmus.Servicos.Servicos
             }
         }
 
-        public ResponseApi Editar(long id, ClienteViewModel model)
+        public ResponseApi Editar(long id, ClienteDTO model)
         {
             try
             {
@@ -87,6 +89,18 @@ namespace Cadmus.Servicos.Servicos
             try
             {
                 return _clienteRepositorio.GetById(id);
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException($"Erro ao buscar por Id {e.Message}");
+            }
+        }
+
+        public List<Cliente> ObterListaClientes()
+        {
+            try
+            {
+                return _clienteRepositorio.ObterListaClientes().ToList();
             }
             catch (Exception e)
             {

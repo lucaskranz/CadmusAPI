@@ -1,0 +1,12 @@
+C:\Projetos\CadmusAPI\Cadmus.Rest\bin\Debug\net5.0\Cadmus.Rest.deps.json
+C:\Projetos\CadmusAPI\Cadmus.Rest\bin\Debug\net5.0\Cadmus.Rest.dll
+C:\Projetos\CadmusAPI\Cadmus.Rest\bin\Debug\net5.0\ref\Cadmus.Rest.dll
+C:\Projetos\CadmusAPI\Cadmus.Rest\bin\Debug\net5.0\Cadmus.Rest.pdb
+C:\Projetos\CadmusAPI\Cadmus.Rest\obj\Debug\net5.0\Cadmus.Rest.csprojAssemblyReference.cache
+C:\Projetos\CadmusAPI\Cadmus.Rest\obj\Debug\net5.0\Cadmus.Rest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\CadmusAPI\Cadmus.Rest\obj\Debug\net5.0\Cadmus.Rest.AssemblyInfoInputs.cache
+C:\Projetos\CadmusAPI\Cadmus.Rest\obj\Debug\net5.0\Cadmus.Rest.AssemblyInfo.cs
+C:\Projetos\CadmusAPI\Cadmus.Rest\obj\Debug\net5.0\Cadmus.Rest.csproj.CoreCompileInputs.cache
+C:\Projetos\CadmusAPI\Cadmus.Rest\obj\Debug\net5.0\Cadmus.Rest.dll
+C:\Projetos\CadmusAPI\Cadmus.Rest\obj\Debug\net5.0\ref\Cadmus.Rest.dll
+C:\Projetos\CadmusAPI\Cadmus.Rest\obj\Debug\net5.0\Cadmus.Rest.pdb

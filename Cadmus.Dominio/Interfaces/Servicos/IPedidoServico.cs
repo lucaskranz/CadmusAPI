@@ -1,9 +1,6 @@
-﻿using Cadmus.Dominio.Entidades;
-using System;
+﻿using Cadmus.Dominio.DTO;
+using Cadmus.Dominio.Entidades;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cadmus.Dominio.Interfaces.Servicos
 {
@@ -11,8 +8,7 @@ namespace Cadmus.Dominio.Interfaces.Servicos
     {
         List<Pedido> ObterListaPedidos();
         Pedido ObterPedidoPorId(long id);
-        ResponseApi Cadastrar(PedidoViewModel pedido);
-        ResponseApi Editar(PedidoViewModel pedido);
+        ResponseApi Cadastrar(PedidoDTO model);
         ResponseApi Excluir(long id);
     }
 }

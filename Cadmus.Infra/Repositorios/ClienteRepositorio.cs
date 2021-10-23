@@ -18,5 +18,10 @@ namespace Cadmus.Infra.Repositorios
         {
             return DbSet.Where(w => w.Email.Equals(email)).Any();
         }
+
+        public IQueryable<Cliente> ObterListaClientes()
+        {
+            return DbSet;
+        }
     }
 }

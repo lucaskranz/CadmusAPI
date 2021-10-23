@@ -1,0 +1,12 @@
+C:\Projetos\CadmusAPI\Cadmus.Dominio\bin\Debug\net5.0\Cadmus.Dominio.deps.json
+C:\Projetos\CadmusAPI\Cadmus.Dominio\bin\Debug\net5.0\Cadmus.Dominio.dll
+C:\Projetos\CadmusAPI\Cadmus.Dominio\bin\Debug\net5.0\ref\Cadmus.Dominio.dll
+C:\Projetos\CadmusAPI\Cadmus.Dominio\bin\Debug\net5.0\Cadmus.Dominio.pdb
+C:\Projetos\CadmusAPI\Cadmus.Dominio\obj\Debug\net5.0\Cadmus.Dominio.csprojAssemblyReference.cache
+C:\Projetos\CadmusAPI\Cadmus.Dominio\obj\Debug\net5.0\Cadmus.Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\CadmusAPI\Cadmus.Dominio\obj\Debug\net5.0\Cadmus.Dominio.AssemblyInfoInputs.cache
+C:\Projetos\CadmusAPI\Cadmus.Dominio\obj\Debug\net5.0\Cadmus.Dominio.AssemblyInfo.cs
+C:\Projetos\CadmusAPI\Cadmus.Dominio\obj\Debug\net5.0\Cadmus.Dominio.csproj.CoreCompileInputs.cache
+C:\Projetos\CadmusAPI\Cadmus.Dominio\obj\Debug\net5.0\Cadmus.Dominio.dll
+C:\Projetos\CadmusAPI\Cadmus.Dominio\obj\Debug\net5.0\ref\Cadmus.Dominio.dll
+C:\Projetos\CadmusAPI\Cadmus.Dominio\obj\Debug\net5.0\Cadmus.Dominio.pdb
